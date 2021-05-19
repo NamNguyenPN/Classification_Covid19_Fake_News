@@ -49,3 +49,6 @@ def clasify(sentence):
     prediction = load_dataset.variety_mappings[label[0]] # Retrieve from dictionary
     # prediction = model.predict(a) # Retrieve from dictionary
     return prediction # Return the predictions
+from preprocess import contractions
+
+print(contractions.fix("Nam"))
