@@ -18,3 +18,5 @@ Chúng tôi tiến hành thực nghiệm các mô hình máy học đơn giản 
 - **Random Forest**
 - **Support Vector Classification (rbf, sigmoid, linear)**
 
+## **Về dữ liệu đầu vào**
+Chúng tôi tiến hành tiến hành xử lý dữ liệu

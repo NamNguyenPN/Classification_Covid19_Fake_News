@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
-import pickle, load_dataset
+import pickle, load_dataset,re
+from preprocess import contractions
+
 from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 
 _MODEL_PATH="./model/"
@@ -20,9 +22,18 @@ _tf_idf=pickle.load(open(_PREPROCESS,'rb'))
 ####################################
 ### preprocess def ###
 def preprocess(sentence):
-    list_sentences=np.array([])
-    list_sentences=np.append(list_sentences,sentence)
-    return _tf_idf.transform(list_sentences)
+    cleaned_text=re.sub(r"http\S+", '',sentence, flags=re.MULTILINE)
+    cleaned_text = re.sub(r'[^a-zA-Z\d\s\']+', '', cleaned_text)
+    #cleaned_text=x
+    word_list = []
+    for each_word in cleaned_text.split():
+        try:
+            word_list.append(contractions.fix(each_word.lower()).lower())
+        except:
+            print(sentence)
+    sen=[]
+    sen.append(" ".join(word_list))
+    return _tf_idf.transform(sen)
 
 ### Test model ###
 def test_model():
@@ -44,11 +55,10 @@ def test_model():
 
 
 ### Clasify on Website ###
-def clasify(sentence):
+def classify(sentence):
     label=_model.predict(preprocess(sentence))
     prediction = load_dataset.variety_mappings[label[0]] # Retrieve from dictionary
     # prediction = model.predict(a) # Retrieve from dictionary
     return prediction # Return the predictions
-from preprocess import contractions
 
-print(contractions.fix("Nam"))
+

@@ -31,18 +31,21 @@
 </head>	
 <body>
     <div id="login-form-container">
-        <form action="classify" method="GET">
-            <div class="card" style="width: 400px">
+        <form action="classify" method="GET" style="width: 80%;">
+            <div class="card" style="width: 100%;">
             <div class="card-content">
                 <div class="media">
                 <div class="is-size-4 has-text-centered">SVC Classification</div>
                 </div>
                 <div class="content">
-
-                <div class="field">
-                    <p class="control">
-                    Sentence <input class="input" type="text" name="txt" id="txt">
-                    </p>
+                <div class="field" style="">
+        
+                    <p>Sentence</p>
+                    <textarea class="input" name="txt" id="txt" cols="30" row="9" placeholder="Nội dung bài Tweet" style="height: 400px; width:100%; padding-left:18px;">{{sentence}}</textarea>
+        
+                </div>
+                <div class="media" >
+                    <div class="is-size-4 has-text-centered">{{ variety }}</div>
                 </div>
                 <div class="field">
                     <button class="button is-fullwidth is-rounded is-success">Submit</button>

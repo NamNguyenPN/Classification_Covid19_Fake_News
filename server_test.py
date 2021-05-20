@@ -1,5 +1,6 @@
-import SVCmodel # Import the python file containing the ML model
+import backend # Import the python file containing the ML model
 from flask import Flask, request, render_template,jsonify # Import flask libraries
+
 
 app = Flask(__name__,template_folder="templates")
 
@@ -15,10 +16,10 @@ def classify_type():
         exam = request.args.get('txt') # Get parameters for sentence
 
         # Get the output from the classification model
-        variety = SVCmodel.classify(exam)
+        variety = backend.classify(exam)
 
         # Render the output in new HTML page
-        return render_template('output1.html', variety=variety)
+        return render_template('home1.html', variety=variety,sentence=exam)
     except:
         return 'Error'
 
