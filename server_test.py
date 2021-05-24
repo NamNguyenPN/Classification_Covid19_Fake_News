@@ -1,25 +1,21 @@
 import backend # Import the python file containing the ML model
 from flask import Flask, request, render_template,jsonify # Import flask libraries
 
-
 app = Flask(__name__,template_folder="templates",static_url_path='/static')
 
 @app.route("/")
 def home():
     return render_template('home1.html')   
 
-@app.route("/")
-def retry():
-    return render_template('home1.html')   
-
 @app.route("/classify",methods=['POST','GET'])
 def classify_type():
-    # return "Hello, Salvador"
     try:
         exam = request.args.get('txt') # Get parameters for sentence
 
         # Get the output from the classification model
         label = backend.classify(exam)
+        
+        #CSS for output
         if exam == "":
             img = "error.png"
             label_class = "input alert-warning"
@@ -36,6 +32,13 @@ def classify_type():
     except:
         return 'Error'
 
+def retry():
+    exam = request.args.get('txt') # Get parameters for sentence
+
+    # Get the output from the classification model
+    label = backend.classify(exam)
     
+    return render_template('home1.html', label='',sentence='', label_class='', image = img, display="none")
+
 if __name__ == "__main__":
     app.run(debug=True)
