@@ -6,6 +6,8 @@
 	<title>COVID Fake News</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
         html{
             overflow: hidden;
@@ -17,6 +19,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #378df1;
         }
 
         #login-form-container{
@@ -27,10 +30,44 @@
             align-items: center;
             justify-content: center;
         }
+        .field p{
+            font-size: 25px;
+        }
+        .field button{
+            width: 40%;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+        textarea.input{
+            font-size: 25px;
+        }
+        h1, h5{
+            position: relative;
+            margin-top: 100px;
+            margin-left: 340px;
+            color: white;
+        }
+        h1{
+            font-size: 50px;
+        }
+        h5{
+            font-style: italic;
+            margin-top: 50px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            height: 300px;
+        }
+        .field img.center.output{
+            display: none;
+        }
     </style>
 </head>	
 <body>
-    <div id="login-form-container">
+    <!-- <div id="login-form-container">
         <form action="classify" method="GET" style="width: 80%;">
             <div class="card" style="width: 100%;">
             <div class="card-content">
@@ -48,11 +85,50 @@
                     <div class="is-size-4 has-text-centered">{{ variety }}</div>
                 </div>
                 <div class="field">
-                    <button class="button is-fullwidth is-rounded is-success">Submit</button>
+                    <button class="button is-light">Retry</button>
+                    <button class="button is-success">Predict</button>
                 </div>
                 </div>
             </div>
         </form>
+    </div> -->
+
+    <h1>I'm a Natural Language Processing model.</h1>
+    <h5>You can teach me how to recognize Covid fake news.<br>Use the below input field to type a tweet about COVID and I'll predict this tweet is FAKE or REAL.</h5>
+    <div class="row" style="margin-left: 15%;margin-top: 50px;">
+        <div class="col-md-6">
+            <form action="classify" method="GET">
+                <div class="card" style="width: 100%;">
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="field">
+                                <p><strong>INPUT</strong></p>
+                                <textarea class="input" name="txt" id="txt" cols="30" row="9" placeholder="Paste/Type your Tweet here ... " style="height: 400px; width:100%; padding-left:18px;">{{sentence}}</textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button class="button is-light" type="reset" onclick="retry()">Retry</button>
+                            <button class="button is-success">Predict</button>
+                        </div>  
+                    </div>
+                </div>
+            </form>  
+
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 100%;">
+                <div class="card-content">
+                    <div class="content">
+                        <div class="field">
+                            <p><strong>OUTPUT</strong></p>
+                            <!-- <img src="{{image}}"> -->
+                            <img src ="/static/{{image}}" class="center output" style="display: {{display}};">
+                            <textarea class="{{label_class}}" name="txt" id="txt" style="width:200px; padding-left:18px;border-color: #b5b5b5;box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);text-align: center; width: 100%; text-transform: uppercase;font-weight: bold;" readonly>{{ label }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
