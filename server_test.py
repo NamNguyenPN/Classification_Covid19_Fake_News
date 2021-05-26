@@ -17,18 +17,15 @@ def classify_type():
         
         #CSS for output
         if exam == "":
-            img = "error.png"
             label_class = "input alert-warning"
             return render_template('home1.html', label='Nothing to predict',sentence='', label_class=label_class, image = img, display="block")
         if label == "fake":
-            img = "sad.png"
             label_class = "input alert-danger"
         else:
-            img = "happy.png"
             label_class = "input alert-success"
 
         # Render the output in new HTML page
-        return render_template('home1.html', label=label,sentence=exam, label_class=label_class, image = img, display="block")
+        return render_template('home1.html', label=label,sentence=exam, label_class=label_class, display="block")
     except:
         return 'Error'
 
