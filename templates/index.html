@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CLASSIFICATION</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css')}}"  type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"  type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/all.css" type="text/css">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"  type="text/css">
+        <link rel="stylesheet" href="/assets/css/style.css"  type="text/css">
+    </head>
+    <main class="h-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 w-100 ml-xl-4">
+                    <div class="title mt-xl-4 mb-xl-4">
+                        <h1 class="w-100">Natural Language Processing Model <span><i class="fab fa-twitter fa-2x algin-bottom ml-3"></i></span> </h1>
+                        <h5 class="mt-3">Labeling news about Covid-19 on the Twitter platform.</h5>
+                        <h5><i>Please input Covid-19 news on Twitter here. The model will return a FAKE or REAL label.</i></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-xl-2">
+            <div class="row justify-content-sm-center">
+                <div class="col-xl-6 col-lg-6 pl-0">
+                    <div class="card border-0 p-3">
+                        <form action="classify" method="GET" class="mt-auto">
+                            <div class="card-header border-bottom-0 p-3 mt-0">
+                                <div class="card-text">
+                                    <p class="m-auto text-center">CLASSIFY NEWS</p>
+                                </div>    
+                            </div>
+                            <div class="card-body pt-0 pl-3 pr-3 pb-0">
+                                <textarea class="input-group-texts w-100 pr-xl-3 pl-xl-3 pt-xl-2 pb-xl-2" rows='10' name="txt" id="txt" placeholder="Paste/Type your Tweet here ... ">{{sentence}}</textarea>
+                            </div>
+                            <div class="card-footer border-top-0 pb-3">
+                                <div class="row justify-content-sm-center">
+                                    
+                                    <div class="col-lg-5 text-center mr-xl-4"  >
+                                        <input type="button" class="w-100 pt-1 pb-1" value="Clear" onclick="retry()">
+                                    </div>
+                                    <div class="col-lg-5 text-center  ml-xl-4" >
+                                        <input type="submit" class="w-100 pt-1 pb-1" value="Label">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                    
+                </div>
+                <div class="col-xl-4 col-lg-4 pl-0">
+                    <div class="card h-100 text-center {{label_class}} result border-0">
+                        <div class="mt-auto mb-auto" >
+                            <p class="label">RESULT</p>
+                            <input type="text" id="result" class="mt-auto mb-auto text-center w-25 {{label_class}}" placeholder="{{label}}" readonly>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </main>
+</html>

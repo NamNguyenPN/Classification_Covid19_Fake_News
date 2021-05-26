@@ -1,4 +1,5 @@
 {
     "python.pythonPath": "D:\\Users\\abc23\\anaconda3\\envs\\vader\\python.exe",
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "liveServer.settings.port": 5501
 }

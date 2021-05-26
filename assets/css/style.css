@@ -1,0 +1,84 @@
+html,main{
+    background-color: #3dbffc;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.title h1,.title h5{
+    color:#fff;
+    font-weight: bold;
+}
+.card-header,.card-footer{
+    background-color:#fff !important;
+}
+.card-footer input{
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.card-footer input[type=submit]{
+    background-color: #3ec46d;
+    box-shadow: 1px 1px 3px 2px rgba(62,196,109,.3);
+    color:#fff;
+    font-weight: bold;
+    border-radius: 50px;
+}
+.card-footer input[type=button]{
+    background-color: #eee;
+    border-radius: 50px;
+    box-shadow: 1px 1px 3px 2px rgba(36,36,36,.3);
+    font-weight: bold;
+    color:rgb(233, 35, 0)
+}
+.card-text p,.label{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing: 1.1px;
+}
+
+textarea{
+    background-color: #eee;
+    border-color: #dbdbdb;
+    border-radius: 20px;
+    color: #363636;
+    outline: none;
+}
+.card{
+    border-radius: 20px !important;
+    box-shadow: -5px 3px 20px 0px rgba(36,36,36,.5);
+}
+#result{
+    font-size: 30px;
+    border: 0px solid;
+    outline: none;
+    background-color: rgba(36,36,36,.0) ;
+}
+.result{
+   background-color: gray;
+   color: white
+}
+.real::placeholder{
+    color:white;
+    font-weight: 900;
+}
+.fake::placeholder{
+    color:white;
+    font-weight: 900;
+}
+input[type='submit']:hover{
+    box-shadow: 01px 1px 5px 3px rgba(62,196,109,.5);
+    transition-delay: .8;
+}
+input[type='button']:hover{
+    box-shadow: 0px 1px 5px 3px rgba(36,36,36,.5);
+}
+.real{
+    background-color: rgb(67, 211, 91) !important;
+}
+.fake{
+    background-color: rgb(236, 213, 0) !important;
+}
+input[type='text']::placeholder{
+    color:white;
+    font-weight: bold;
+}
+
