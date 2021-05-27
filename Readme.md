@@ -32,17 +32,37 @@ Chúng tôi quyết định chọn model SVC(rbf) và tiếp tục tiến hành 
 Kết quả đạt sau khi tinh chỉnh tham số với C=3, max_iter=1000 đã tăng lên  với Accuracy: 0.9411 và F1-score: 0.9442.
 
 ## **Xây dựng Website**
-Chúng tôi sử dung Flask để xây dựng một Website đơn giản với chức năng đưa một mẫu tin tức đầu vào, đầu ra là nhãn (Real hoặc Fake) của mẫu tin tức đó.
+Chúng tôi sử dụng Flask một Framework của Python để xây dựng một Website đơn giản với chức năng đưa một mẫu tin tức đầu vào, đầu ra là nhãn (Real hoặc Fake) của mẫu tin tức đó.
+Giao diện Website chúng tôi sử dụng Bootstrap 4 và FontAwesome 6 và file style.css tự thiết kế.
 
 ## **Hướng dẫn sử dụng**
-Để sử dụng hay cài đặt Python hoặc Anaconda
 
 Tiếp đó cài mở terminal của Python hoặc Anaconda cài đặt các gói Package bằng lệnh dưới đây
 
 ```bash
 pip install flask pickle nltk
 ```
-Sau khi cài đặt xong tiếp tục trên terminal gõ lệnh
+
+Sau khi cài đặt xong tiếp tục trên terminal gõ lệnh:
+
 ```bash
-python
+cd path\to\run_server\
 ```
+
+Nếu là lần đầu bạn cài gói Package nltk thì hãy chạy tiếp lệnh dưới đây:
+
+```bash
+python nltk_download.py
+```
+
+Sẽ có cửa sổ của nltk_download hiện ra và hãy nhấn Download
+
+![image](imgs/nltk.png)
+
+Sau khi đã thực hiện các bước trên thì bắt đầu chạy Website bằng lệnh:
+
+```bash
+python run_server.py
+```
+
+**Ngoài ra bạn có thể mở trực tiếp run_server.py bằng Visual Studio Code sau khi đã cài đặt các gói Package trên.**
