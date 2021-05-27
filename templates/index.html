@@ -28,7 +28,7 @@
             <div class="row justify-content-sm-center">
                 <div class="col-xl-6 col-lg-6 pl-0">
                     <div class="card border-0 p-3">
-                        <form action="classify" method="GET" class="mt-auto">
+                        <form action="/classify" method="GET" class="mt-auto">
                             <div class="card-header border-bottom-0 p-3 mt-0">
                                 <div class="card-text">
                                     <p class="m-auto text-center">CLASSIFY NEWS</p>
@@ -41,11 +41,10 @@
                                 <div class="row justify-content-sm-center">
                                     
                                     <div class="col-lg-5 text-center mr-xl-4"  >
-                                        <input type="button" class="w-100 pt-1 pb-1" value="Clear" onclick="retry()">
+                                        <a href="/" ><p class="w-100 pt-1 pb-1 mt-auto mb-auto">Clear</p></a>
                                     </div>
                                     <div class="col-lg-5 text-center  ml-xl-4" >
-                                        <input type="submit" class="w-100 pt-1 pb-1" value="Label">
-                                    </div>
+                                        <input type='submit'  class="w-100 pt-1 pb-1" name='label' value="Label">                                    </div>
                                 </div>
                             </div>
                         </form>

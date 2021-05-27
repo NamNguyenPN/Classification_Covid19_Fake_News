@@ -6,8 +6,8 @@ from sklearn.metrics import precision_score,recall_score,f1_score,accuracy_score
 
 print("CALLED")
 
-_MODEL_PATH="./model/"
-_PREPROCESS_PATH="./preprocess/"
+_MODEL_PATH=".\\model\\"
+_PREPROCESS_PATH=".\\preprocess\\"
 
 _MODEL_FILENAME="SVC.sav"
 _PREPROCESS_FILENAME="TF_IDF.sav"

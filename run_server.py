@@ -1,3 +1,4 @@
+import re
 import backend # Import the python file containing the ML model
 from flask import Flask, request, render_template,jsonify # Import flask libraries
 
@@ -18,8 +19,8 @@ def classify_type():
         
         #CSS for output
         if len(sentence) == 0:
-            label_class = "input alert-warning"
-            return render_template('index.html', label='',sentence='', label_class=label_class)
+            print("True")
+            return render_template('index.html', label='LABEL',sentence='', label_class='')
         if label == "FAKE":
             label_class = "fake"
         else:
@@ -30,13 +31,11 @@ def classify_type():
     except:
         return 'Error'
 
-def retry():
-    exam = request.args.get('txt') # Get parameters for sentence
+# def retry():
+#     if request.method=="POST":
+#         if request.form['btn']=='Clear':
+#             return render_template("index.html",label='LABEL',sentence="",label_class='')
 
-    # Get the output from the classification model
-    label = backend.classify(exam)
-    
-    return render_template('index.html', label='',sentence='', label_class='')
 
 if __name__ == "__main__":
     app.run(debug=True)
