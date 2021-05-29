@@ -66,3 +66,22 @@ python run_server.py
 ```
 
 **Ngoài ra bạn có thể mở trực tiếp run_server.py bằng Visual Studio Code sau khi đã cài đặt các gói Package trên.**
+
+
+**Sau đó bạn chỉ cần đưa nội dung tin tức trên Twitter vào mục CLASSIFY NEWS và bấm Label, hệ thống sẽ phân tích, dự đoán và trả lại nhãn cho tin tức đó là FAKE hay REAL.**
+
+
+## **Hình ảnh trực quan khi chạy Website**
+
+- ## **Trạng thái Website chưa đưa dữ liệu**
+
+![image](imgs/Web.png)
+
+
+- ## **Trạng tái Website khi trả về nhãn REAL**
+
+![image](imgs/Web_result_REAL.png)
+
+- ## **Trạng thái Website khi trả về nhãn FAKE**
+
+![image](imgs/Web_result_FAKE.png)
